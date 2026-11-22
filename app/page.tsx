@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Activity, ArrowDownToLine, Bell, Calculator, ChevronDown, CircleHelp, ClipboardList, FileSpreadsheet, FolderKanban, HardHat, LayoutDashboard, Plus, Search, Settings, Users, Wallet, X } from "lucide-react";
+import { Activity, ArrowDownToLine, Bell, Calculator, ChevronDown, Ruler, CircleHelp, ClipboardList, FileSpreadsheet, FolderKanban, HardHat, LayoutDashboard, Plus, Search, Settings, Users, Wallet, X } from "lucide-react";
 import { BoqItem, initialItems, money } from "@/lib/boq";
 
 const nav = [
@@ -31,6 +31,7 @@ export default function Home() {
       <div className="flex items-center gap-3 border-b border-white/10 px-6 py-5"><div className="grid h-10 w-10 place-items-center rounded-xl bg-[#b9e36a] text-[#183126]"><HardHat size={23}/></div><div><div className="text-lg font-bold tracking-tight">BuildCost <span className="text-[#b9e36a]">PH</span></div><div className="text-[10px] uppercase tracking-[.2em] text-white/50">Construction tools</div></div></div>
       <div className="px-4 pt-6 text-[10px] font-bold uppercase tracking-[.2em] text-white/40">Workspace</div>
       <nav className="mt-2 space-y-1 px-3">{nav.map(({label,icon:Icon}) => <button key={label} onClick={() => setActive(label)} className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm transition ${active===label ? "bg-[#b9e36a] font-semibold text-[#183126]" : "text-white/70 hover:bg-white/10 hover:text-white"}`}><Icon size={18}/>{label}{label==="BOQ Calculator" && <span className="ml-auto rounded-md bg-white/10 px-2 py-0.5 text-[10px]">BETA</span>}</button>)}</nav>
+      <div className="px-4 pt-5 text-[10px] font-bold uppercase tracking-[.2em] text-white/40">Estimating tools</div><nav className="mt-2 space-y-1 px-3"><a href="/quantity-takeoff" className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-white/70 hover:bg-white/10 hover:text-white"><Ruler size={18}/> Quantity takeoff <span className="ml-auto rounded-md bg-[#b9e36a]/15 px-2 py-0.5 text-[10px] text-[#b9e36a]">NEW</span></a></nav>
       <div className="mt-8 px-4 text-[10px] font-bold uppercase tracking-[.2em] text-white/40">Manage</div><nav className="mt-2 space-y-1 px-3"><button className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-white/70 hover:bg-white/10"><Users size={18}/> Clients</button><button className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-white/70 hover:bg-white/10"><Settings size={18}/> Settings</button></nav>
       <div className="mt-auto hidden p-4 lg:block"><div className="rounded-2xl border border-white/10 bg-white/5 p-4"><div className="mb-2 flex items-center gap-2 text-sm font-semibold"><CircleHelp size={16} className="text-[#b9e36a]"/> Need a hand?</div><p className="text-xs leading-5 text-white/50">Your estimating workspace. More tools are on the way.</p></div><div className="mt-4 flex items-center gap-3 px-1"><div className="grid h-9 w-9 place-items-center rounded-full bg-[#345448] text-xs font-bold">PH</div><div><div className="text-xs font-semibold">Project workspace</div><div className="text-[10px] text-white/40">Local prototype</div></div><ChevronDown size={15} className="ml-auto text-white/40"/></div></div>
     </aside>
